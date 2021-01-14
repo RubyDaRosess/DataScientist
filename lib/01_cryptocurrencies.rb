@@ -60,3 +60,51 @@ def biggest_value_under_six_thousand
     #{arr.sort_by {|k, v| v.to_f}.last[0]}"
 end
 biggest_value_under_six_thousand
+
+def menu
+    puts "Starting code"
+    puts "............."
+    puts "\n=================================================================================="
+    puts "Je suis le génie de la lampe, que me veux tu ? (1-4)"
+    puts "1 - Donne les crypto les plus cherros, chef !"
+    puts "2 - File moi les crypto du pauvre !"
+    puts "3 - Je veux aussi la liste de celles dont le cours est inferieur à 6000 !"
+    puts "4 - Et la plus chère de celles inferieures à 6000 ?"
+    puts "=================================================================================="
+
+    choice = gets.chomp.to_i
+
+    if choice == 1
+        puts "\n=================================================================================="
+        biggest_money_value
+        puts "=================================================================================="
+    end
+
+    if choice == 2
+        puts "\n=================================================================================="
+        lowest_money_value
+        puts "=================================================================================="
+    end
+
+    if choice == 3
+        puts "\n=================================================================================="
+        value_under_six_thousand 
+        puts "=================================================================================="
+    end
+
+    if choice == 4
+        puts "\n=================================================================================="
+        biggest_value_under_six_thousand
+        puts "=================================================================================="
+    end
+
+    if choice == 666
+        print "\aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH"
+    end
+    
+    if choice > 4 || choice < 1 && choice != 666
+        puts '/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/'
+        puts "Entre 1 et 8 (et surtout pas 666)"
+    end
+end
+menu

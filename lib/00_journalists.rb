@@ -24,39 +24,39 @@ Arr = ["@jcunniet","@PaulLampon","@Aziliz31","@ssoumier","@marionsouzeau","@gael
 def handle_length
     puts "Il y a #{Arr.length} handle dans cet array"
 end
-handle_length
+
 # Quel est le handle le plus court de cette liste ?
 def handle_min
     puts "\nLe handle le plus court est : #{Arr.sort_by(&:length)[0]}"
 end
-handle_min
+
 # Combien y-a-t'il de handle contenant 5 caractères (le @ ne compte pas pour un caractère)
 def handle_five
     puts "\nIl y a #{Arr.count {|string| string.length == 6}} handle avec 5 caractères dans cet array"
 end
-handle_five
+
 # Combien commencent par une majuscule (première lettre juste après le @) ?
 def handle_startwith_upcase
     puts "Il y a #{Arr.count {|string| string[1] == string[1].upcase if string[1] != '_'}} handles qui commencent par une majuscule dans cet array"
 end
-handle_startwith_upcase
+
 # Trie la liste de handle par ordre alphabétique.
 def handle_alphabetical_sort
     puts"\nVoici la liste triée par ordre alphabétique"
     puts Arr.sort_by {|a| a.upcase}
 end
-handle_alphabetical_sort
+
 # Trie la liste de handle par taille des handle (les plus petits en premiers, les plus grands après)
 def handle_length_sort
     puts "\nVoici la liste triée par ordre croissant"
     puts Arr.sort {|a, b| a.length <=> b.length}    
 end
-handle_length_sort
+
 # Quelle est la position dans l'array de la personne @epenser ?
 def handle_find_epenser
     puts "\nLa position de epenser est #{Arr.index'@epenser'}"
 end
-handle_find_epenser
+
 # Sors-moi une répartition des handle par taille de ces derniers (nombre de handle avec 1 caractère, nombre de handle avec 2 caractères, nombre de handle avec 3 caractères, etc)
 def handle_repartition
     count = 0
@@ -71,4 +71,80 @@ def handle_repartition
     end
     h.sort.each {|key, value| puts "\nIl y a #{value} handles qui ont #{key} caractères" }
 end
-handle_repartition
+
+
+def menu
+    puts "Starting code"
+    puts "............."
+    puts "\n=================================================================================="
+    puts "Je suis le génie de la lampe, que me veux tu ? (1-8)"
+    puts "1 - Trouver le nombre de handle dans mon array, chef !"
+    puts "2 - Trouver le handle le plus court dans mon array, avec salade tomates oignons"
+    puts "3 - Je veux les handles avec 5 caractères par c'que je suis chiant"
+    puts "4 - Et y en a combien qui commencent par une majuscule ?"
+    puts "5 - Et tu arriverai à la trier par ordre alphabétique ?"
+    puts "6 - Et par taille ?"
+    puts "7 - Et il est où ?! Et il est où ?! Et il eeest oùùùù epenseeeeer lalalala"
+    puts "8 - Maintenant répartis moi les handle par taille !"
+    puts "=================================================================================="
+
+    choice = gets.chomp.to_i
+
+    if choice == 1
+        puts "\n=================================================================================="
+        handle_length
+        puts "=================================================================================="
+    end
+
+    if choice == 2
+        puts "\n=================================================================================="
+        handle_min
+        puts "=================================================================================="
+    end
+
+    if choice == 3
+        puts "\n=================================================================================="
+        handle_five 
+        puts "=================================================================================="
+    end
+
+    if choice == 4
+        puts "\n=================================================================================="
+        handle_startwith_upcase
+        puts "=================================================================================="
+    end
+
+    if choice == 5
+        puts "\n=================================================================================="
+        handle_alphabetical_sort
+        puts "=================================================================================="
+    end
+
+    if choice == 6
+        puts "\n=================================================================================="
+        handle_length_sort
+        puts "=================================================================================="
+    end
+
+    if choice == 7
+        puts "\n=================================================================================="
+        handle_find_epenser
+        puts "=================================================================================="
+    end
+
+    if choice == 8
+        puts "\n=================================================================================="
+        handle_repartition
+        puts "=================================================================================="
+    end
+
+    if choice == 666
+        print "\aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH"
+    end
+    
+    if choice > 8 || choice < 1 && choice != 666
+        puts '/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/'
+        puts "Entre 1 et 8 (et surtout pas 666)"
+    end
+end
+menu
