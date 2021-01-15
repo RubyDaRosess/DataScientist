@@ -34,13 +34,12 @@ Hash = [Key, Value].transpose.to_h
 def biggest_money_value
     puts "La monnaie qui a la plus grosse valeur est : #{Hash.sort_by {|k, v| v.to_f}.last[0]}\n\n"
 end
-biggest_money_value
+
 
 #Là où les crypto qui ont la plus petite valeur.
 def lowest_money_value
     puts "\nLes monnaies qui ont la plus faible valeur sont : #{Hash.sort_by {|k, v| v.to_f}.first(2)}"
 end
-lowest_money_value
 
 #Les devises dont le cours est inférieur à 6000
 def value_under_six_thousand
@@ -50,8 +49,6 @@ def value_under_six_thousand
     puts arr
 end
 
-value_under_six_thousand
-
 #La devise la plus chère parmi celles dont le cours est inférieur à 6000.
 def biggest_value_under_six_thousand
     arr = []
@@ -59,7 +56,6 @@ def biggest_value_under_six_thousand
     puts "\n La monnaie ayant la plus grosse valeur parmi celles dont le cours est inférieur à 6000 est :
     #{arr.sort_by {|k, v| v.to_f}.last[0]}"
 end
-biggest_value_under_six_thousand
 
 def menu
     puts "Starting code"
